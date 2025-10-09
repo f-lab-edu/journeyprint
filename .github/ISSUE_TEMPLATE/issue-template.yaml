@@ -1,0 +1,29 @@
+name: ✨ Make a ticket
+description: 새로운 기능 개선 및 추가 요청
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 기능 개선 요청
+        아래 양식을 작성하면 더 나은 프로젝트를 만들어갈 수 있어요.
+
+  - type: textarea
+    id: improvement-proposal
+    attributes:
+      label: 설명
+      description: "어떻게 개선되었으면 좋겠는지 설명해주세요."
+      placeholder: |
+        예상되는 개선사항:
+        1. 
+        2. 
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 참고 자료
+      description: "스크린샷이나 추가 설명이 필요한 내용을 작성해주세요."
+      placeholder: "참고 할 자료가 있다면 첨부 해주세요."
