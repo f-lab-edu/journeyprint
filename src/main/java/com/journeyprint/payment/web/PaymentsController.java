@@ -18,7 +18,7 @@ public class PaymentsController {
 
     @PostMapping("/api/payments")
     ResponseEntity<ApiResponse<Void>> createPayment(@Valid @RequestBody PaymentCreateRequest request) {
-        paymentService.createPayment(request.toCommand());
+        paymentService.createPayment(request.toServiceRequest());
         return ApiResponse.noContent();
     }
 }

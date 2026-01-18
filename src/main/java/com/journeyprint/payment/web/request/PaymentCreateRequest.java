@@ -11,7 +11,7 @@ public record PaymentCreateRequest(
         @Size(max = 100) String description
 ) {
 
-    public PaymentCreateServiceRequest toCommand() {
+    public PaymentCreateServiceRequest toServiceRequest() {
         return new PaymentCreateServiceRequest(profileId, name, description);
     }
 }
