@@ -5,19 +5,64 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 기능 개선 요청
+        ## 요청
         아래 양식을 작성하면 더 나은 프로젝트를 만들어갈 수 있어요.
 
   - type: textarea
-    id: improvement-proposal
+    id: feature-description
     attributes:
-      label: 설명
-      description: "어떻게 개선되었으면 좋겠는지 설명해주세요."
+      label: 1. 기능 설명
+      description: 구현하고자 하는 기능의 목적과 개요를 작성해주세요.
       placeholder: |
-        예상되는 개선사항:
-        1. 
-        2. 
-        3.
+        예) 사용자가 소유하고 있는 자산을 등록합니다. 실제 카드 번호 대신 자산 명칭을 사용하여 지출 내역을 필터링합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-info
+    attributes:
+      label: 2. API 요청 정보
+      description: HTTP 메서드, 경로, 헤더 정보를 작성해주세요.
+      placeholder: |
+        - 메서드: POST
+        - 경로: /api/resource
+        - 헤더: Content-Type: application/json
+    validations:
+      required: false
+
+  - type: textarea
+    id: request-body
+    attributes:
+      label: 3. 요청 본문 (Body)
+      description: 필요한 속성, 타입, 필수 여부 등을 포함한 JSON 구조를 작성해주세요.
+      placeholder: |
+        {
+          "key": "value",
+          "id": Long
+        }
+      render: json
+    validations:
+      required: false
+
+  - type: textarea
+    id: policies
+    attributes:
+      label: 4. 정책 (Policies)
+      description: 유효성 검사 규칙, 제약 조건, 비즈니스 로직 등을 작성해주세요.
+      placeholder: |
+        - 이름은 1자 이상 30자 이하이어야 한다.
+        - 설명은 선택 사항이다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-scenarios
+    attributes:
+      label: 5. 테스트 시나리오
+      description: 상태 코드 및 예상되는 동작을 시나리오별로 작성해주세요.
+      placeholder: |
+        - 올바르게 요청하면 204를 반환한다.
+        - 필수 값이 누락되면 400을 반환한다.
     validations:
       required: true
 
