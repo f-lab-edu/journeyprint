@@ -28,10 +28,12 @@ dependencies {
     // Spring boot
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+    testImplementation("io.rest-assured:rest-assured:6.0.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // H2
